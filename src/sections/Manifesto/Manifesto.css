@@ -1,0 +1,375 @@
+/* Manifesto Section Styles - Pass V7 Locked */
+
+.manifesto-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #070708;
+  display: block;
+  z-index: 10;
+}
+
+/* ── Shared Atmosphere Layers inside Manifesto ── */
+
+.shared-atmosphere {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.shared-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.shared-layer-clouds-deep {
+  z-index: 1;
+}
+
+.shared-layer-clouds-overlay {
+  z-index: 3;
+}
+
+.shared-glow-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shared-glow {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-accent-muted) 0%, transparent 70%);
+  filter: blur(100px);
+  opacity: 0.15;
+  pointer-events: none;
+  left: 20%;
+  top: 10%;
+  will-change: transform;
+}
+
+.shared-atmosphere-layers {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.shared-noise {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.015;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shared-layer-particles {
+  z-index: 6;
+  mix-blend-mode: screen;
+}
+
+.shared-vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    transparent 45%,
+    rgba(7, 7, 8, 0.35) 70%,
+    rgba(7, 7, 8, 0.95) 100%
+  );
+  pointer-events: none;
+  z-index: 4;
+}
+
+.manifesto-content-v5 {
+  position: absolute;
+  left: 0;
+  top: 6vh;
+  width: 100vw;
+  max-width: none;
+  padding-left: 8vw;
+  padding-right: 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 5;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.manifesto-header-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+/* Meta label stacked layout */
+.manifesto-meta-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.manifesto-meta-label .meta-title {
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.manifesto-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.manifesto-header-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(6.5rem, 8.5vw, 9.5rem);
+  font-weight: 300;
+  line-height: 0.75;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
+  letter-spacing: -0.05em;
+}
+
+.manifesto-header-subtext {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.6rem, 0.75vw, 0.7rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* Red Horizontal Dotted Divider */
+.manifesto-header-divider {
+  width: calc(100% + 4vw);
+  height: 1px;
+  border-bottom: 1.5px dashed rgba(255, 92, 31, 0.25);
+  margin-top: 1.5vh;
+  margin-bottom: 5vh;
+}
+
+/* Statements wrapper container */
+.manifesto-statements-container {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Editorial Statement Typography */
+.manifesto-statement-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.manifesto-bg-circle {
+  position: absolute;
+  top: 22vh;
+  right: 4vw;
+  width: clamp(140px, 15vw, 190px);
+  height: clamp(140px, 15vw, 190px);
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 92, 31, 0.08);
+  pointer-events: none;
+  z-index: -1;
+  user-select: none;
+}
+
+/* Swapped scales: heading is now medium, paragraph is huge */
+.manifesto-editorial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 3.5vw, 4.5rem);
+  line-height: 1.0;
+  color: #ffffff;
+  margin: 0 0 4vh 0;
+  text-align: left;
+}
+
+.accent-kanji {
+  color: var(--color-accent-primary);
+  filter: drop-shadow(0 0 15px var(--color-accent-glow));
+}
+
+.manifesto-supporting-text {
+  font-family: 'Ranade', sans-serif;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 4vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+  max-width: 100%;
+  font-style: italic;
+}
+
+.accent-text {
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  font-style: italic;
+  filter: drop-shadow(0 0 8px var(--color-accent-glow));
+}
+
+.manifesto-signature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 6vh;
+}
+
+.signature-dash {
+  width: 35px;
+  height: 1px;
+  background-color: var(--color-accent-primary);
+  display: inline-block;
+  opacity: 0.6;
+}
+
+.statement-line {
+  display: block;
+  white-space: normal;
+}
+
+.reveal-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.reveal-space {
+  display: inline;
+}
+
+/* Character Reveals */
+.reveal-char {
+  display: inline-block;
+  will-change: opacity, transform, filter;
+  backface-visibility: hidden;
+}
+
+/* ── Handoff & Overlay Elements ── */
+.manifesto-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 8;
+  will-change: opacity;
+}
+
+.manifesto-particles-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.manifesto-exit-light {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ff5c1f;
+  box-shadow: 
+    0 0 20px rgba(255, 92, 31, 1),
+    0 0 40px rgba(255, 92, 31, 0.8),
+    0 0 80px rgba(255, 92, 31, 0.4);
+  opacity: 0;
+  transform: scale(0);
+  will-change: transform, opacity, height, border-radius;
+}
+
+/* Responsive Scaling Overrides for Typography */
+@media (max-width: 1024px) {
+  .manifesto-editorial-text {
+    font-size: clamp(1.8rem, 3vw, 3.5rem);
+  }
+  .manifesto-supporting-text {
+    font-size: clamp(2.4rem, 4vw, 4.5rem);
+    max-width: 100%;
+  }
+  .manifesto-bg-circle {
+    width: 320px;
+    height: 320px;
+    right: 2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .manifesto-editorial-text {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 2vh;
+  }
+  .manifesto-supporting-text {
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    margin-top: 0;
+  }
+  .manifesto-signature {
+    font-size: 0.8rem;
+    margin-top: 4vh;
+  }
+  .manifesto-bg-circle {
+    display: none; /* Hide background circle on mobile to reduce clutter */
+  }
+  .manifesto-corner-num {
+    font-size: clamp(4.5rem, 8vw, 6.5rem);
+  }
+}
+

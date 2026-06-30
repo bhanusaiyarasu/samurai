@@ -122,15 +122,17 @@
 }
 
 .manifesto-header-area {
+  position: relative;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  height: 14vh;
   box-sizing: border-box;
 }
 
 /* Meta label stacked layout */
 .manifesto-meta-label {
+  position: absolute;
+  top: 4vh;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -149,30 +151,41 @@
 }
 
 .manifesto-header-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(280px, 30vw, 450px);
+  height: 100%;
 }
 
 .manifesto-header-num {
+  position: absolute;
+  top: -8vh;
+  right: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(6.5rem, 8.5vw, 9.5rem);
+  font-size: clamp(12rem, 18vw, 22rem);
   font-weight: 300;
-  line-height: 0.75;
+  line-height: 0.7;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.035);
   letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
 }
 
 .manifesto-header-subtext {
+  position: absolute;
+  top: 9vh;
+  right: 6vw;
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.6rem, 0.75vw, 0.7rem);
+  font-size: clamp(0.6rem, 0.75vw, 0.75rem);
   font-weight: 500;
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.35);
-  margin-top: 6px;
   text-transform: uppercase;
+  z-index: 3;
+  white-space: nowrap;
 }
 
 /* Red Horizontal Dotted Divider */
@@ -211,7 +224,7 @@
 .manifesto-bg-circle {
   position: absolute;
   top: 22vh;
-  right: 4vw;
+  right: 14vw;
   width: clamp(140px, 15vw, 190px);
   height: clamp(140px, 15vw, 190px);
   border-radius: 50%;

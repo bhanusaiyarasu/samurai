@@ -10,49 +10,49 @@ export const STATEMENT_LINES = [
   {
     id: 1,
     words: [
-      { text: 'THE GREATEST ', red: false },
+      { text: 'THE GREATEST\u00A0', red: false },
       { text: 'BOUNDARIES', red: true },
     ],
   },
   {
     id: 2,
     words: [
-      { text: 'ARE THE ONES WE ', red: false },
+      { text: 'ARE THE ONES WE\u00A0', red: false },
       { text: 'ACCEPT.', red: true },
     ],
   },
   {
     id: 3,
     words: [
-      { text: 'THE GREATEST ', red: false },
+      { text: 'THE GREATEST\u00A0', red: false },
       { text: 'BATTLES', red: true },
     ],
   },
   {
     id: 4,
     words: [
-      { text: 'ARE THE ONES ', red: false },
+      { text: 'ARE THE ONES\u00A0', red: false },
       { text: 'WITHIN.', red: true },
     ],
   },
   {
     id: 5,
     words: [
-      { text: 'AND THE GREATEST ', red: false },
+      { text: 'AND THE GREATEST\u00A0', red: false },
       { text: 'VICTORIES', red: true },
     ],
   },
   {
     id: 6,
     words: [
-      { text: 'BEGIN WHEN WE ', red: false },
+      { text: 'BEGIN WHEN WE\u00A0', red: false },
       { text: 'REFUSE', red: true },
     ],
   },
   {
     id: 7,
     words: [
-      { text: 'TO STAY ', red: false },
+      { text: 'TO STAY\u00A0', red: false },
       { text: 'WHERE WE ARE.', red: true },
     ],
   },

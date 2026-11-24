@@ -160,14 +160,14 @@
 
 /* -------------------------------------------------------------
    LAYER 4 (FRONT): Center Poetic Statements (Masked Line-by-Line)
-   Aligned in FRONT of Katana (z-index: 10) with font-size 40px
+   Aligned in FRONT of Katana (z-index: 10) with font-size 60px
    ------------------------------------------------------------- */
 .katana-center-text-mask {
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
-  height: clamp(54px, 5.5vw, 76px);
+  height: clamp(74px, 7.5vw, 105px);
   transform: translateY(-50%);
   overflow: hidden;
   display: flex;
@@ -186,15 +186,15 @@
   justify-content: center;
   font-family: "Cinzel", serif;
   font-optical-sizing: auto;
-  font-size: clamp(26px, 3.2vw, 40px);
+  font-size: clamp(34px, 4.8vw, 60px);
   font-weight: 700;
   font-style: normal;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
   line-height: 1;
   will-change: transform, opacity;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 0 24px rgba(0, 0, 0, 0.95), 0 3px 12px rgba(0, 0, 0, 0.9);
 }
 
 .center-text-white {

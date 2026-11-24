@@ -1,0 +1,460 @@
+/* ==========================================================================
+   ABOUT SECTION — CINEMATIC SAMURAI / CYBER-EDITORIAL STYLING
+   ========================================================================== */
+
+:root {
+  /* Dynamic font variables — User can override these anytime */
+  --about-font-headline: 'Cinzel', serif;
+  --about-font-body: 'Ranade', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --about-font-meta: 'Inter', monospace, sans-serif;
+
+  /* Editorial Color Palette */
+  --about-crimson: #d11a2a;
+  --about-crimson-bright: #ff2038;
+  --about-crimson-muted: #801822;
+  --about-crimson-faint: rgba(209, 26, 42, 0.12);
+  --about-crimson-glow: rgba(209, 26, 42, 0.25);
+  --about-text-primary: #ededed;
+  --about-text-secondary: #8e8e98;
+  --about-bg-dark: #060607;
+
+  /* Custom background image slot (User will provide this image) */
+  --about-custom-bg: none;
+}
+
+/* --------------------------------------------------------------------------
+   Section Wrapper & Base
+   -------------------------------------------------------------------------- */
+.about-section {
+  position: relative;
+  background-color: var(--about-bg-dark);
+  color: var(--about-text-primary);
+  min-height: 100vh;
+  padding: 120px 0 140px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Background Atmospheric Gradient Glow */
+.about-bg-radial {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 60vw;
+  height: 60vh;
+  background: radial-gradient(circle, rgba(160, 18, 30, 0.12) 0%, rgba(6, 6, 7, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Editorial Left Rail / HUD Sidebar (Awwwards Style)
+   -------------------------------------------------------------------------- */
+.about-left-rail {
+  position: absolute;
+  left: 28px;
+  top: 100px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+@media (max-width: 1024px) {
+  .about-left-rail {
+    display: none;
+  }
+}
+
+.about-rail-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  color: #060607;
+  font-family: var(--about-font-headline);
+  font-weight: 800;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+.badge-honors {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--about-font-meta);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--about-text-secondary);
+  text-transform: uppercase;
+}
+
+.about-rail-chapters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.rail-ch {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  color: #55555e;
+  cursor: default;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.rail-ch.active {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--about-crimson-bright);
+  font-weight: 600;
+}
+
+.rail-ch.active .active-dash {
+  display: inline-block;
+  width: 10px;
+  height: 1.5px;
+  background-color: var(--about-crimson-bright);
+}
+
+.rail-ch.active .ch-name {
+  font-family: var(--about-font-meta);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  margin-left: 2px;
+}
+
+.about-rail-audio {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: #888894;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-rail-audio:hover {
+  border-color: var(--about-crimson);
+  color: var(--about-crimson-bright);
+  transform: scale(1.08);
+}
+
+.about-rail-audio.playing {
+  border-color: var(--about-crimson-bright);
+  color: var(--about-crimson-bright);
+  box-shadow: 0 0 12px var(--about-crimson-glow);
+}
+
+/* --------------------------------------------------------------------------
+   Main Container Layout
+   -------------------------------------------------------------------------- */
+.about-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 5;
+}
+
+@media (min-width: 1025px) {
+  .about-container {
+    padding-left: 100px; /* Room for left HUD */
+    padding-right: 60px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Top Bar Rail: = ABOUT & Metadata
+   -------------------------------------------------------------------------- */
+.about-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 40px;
+}
+
+.about-label-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.equal-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.equal-bars .bar {
+  width: 14px;
+  height: 1.5px;
+  background-color: var(--about-crimson-bright);
+}
+
+.about-label-badge .label-text {
+  font-family: var(--about-font-meta);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: #c0c0c8;
+  text-transform: uppercase;
+}
+
+.about-top-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.meta-index {
+  font-family: var(--about-font-meta);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--about-crimson-muted);
+}
+
+.meta-kanji {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--about-crimson);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   Massive Stroked Headline: "I AM STILL ALIVE."
+   -------------------------------------------------------------------------- */
+.about-headline-wrap {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.about-headline-stroked {
+  font-family: var(--about-font-headline);
+  font-size: clamp(3rem, 7.8vw, 8.2rem);
+  font-weight: 700;
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.6px var(--about-crimson);
+  text-stroke: 1.6px var(--about-crimson);
+  text-shadow: 0 0 35px rgba(209, 26, 42, 0.22);
+  margin: 0;
+  user-select: none;
+  transition: -webkit-text-stroke 0.3s ease;
+}
+
+.about-headline-stroked:hover {
+  -webkit-text-stroke: 1.8px var(--about-crimson-bright);
+  text-shadow: 0 0 45px rgba(255, 32, 56, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Content Two-Column Grid
+   -------------------------------------------------------------------------- */
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr;
+  gap: 5rem;
+  align-items: start;
+  position: relative;
+  z-index: 6;
+}
+
+@media (max-width: 900px) {
+  .about-content-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+/* Left Column: Bio & Philosophy */
+.about-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-lead-text {
+  font-family: var(--about-font-body);
+  font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: #ededed;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.about-accent-crimson {
+  color: var(--about-crimson-bright);
+  font-weight: 500;
+}
+
+.about-philosophy-text {
+  font-family: var(--about-font-body);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 300;
+  line-height: 1.68;
+  color: var(--about-text-secondary);
+  max-width: 530px;
+}
+
+/* Right Column: Spec HUD Table */
+.about-right-col {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+
+.about-spec-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.about-spec-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.spec-label {
+  font-family: var(--about-font-meta);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--about-crimson-muted);
+  text-transform: uppercase;
+}
+
+.spec-value {
+  font-family: var(--about-font-meta);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #ededf0;
+  text-transform: uppercase;
+}
+
+.spec-sub-kanji {
+  color: #777782;
+  font-size: 11px;
+  margin-left: 6px;
+  letter-spacing: 0.05em;
+}
+
+.status-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #22c55e; /* Vibrant glowing green dot matching modern radar/status */
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 10px #22c55e;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+    box-shadow: 0 0 18px #22c55e;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Background Artwork Layer (Modular Placeholder for User's Image)
+   -------------------------------------------------------------------------- */
+.about-bg-artwork {
+  position: absolute;
+  top: 10%;
+  right: -2%;
+  width: 58%;
+  max-width: 820px;
+  height: 80%;
+  pointer-events: none;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0.38;
+  mix-blend-mode: screen;
+
+  /* When user provides their background image, set it via var(--about-custom-bg) */
+  background-image: var(--about-custom-bg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+}
+
+.about-dragon-silhouette {
+  width: 100%;
+  height: auto;
+  color: var(--about-crimson);
+  filter: drop-shadow(0 0 25px rgba(209, 26, 42, 0.35));
+}
+
+@media (max-width: 900px) {
+  .about-bg-artwork {
+    width: 90%;
+    opacity: 0.2;
+    right: -10%;
+    top: 25%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Corner Numeral Watermark
+   -------------------------------------------------------------------------- */
+.about-corner-numeral {
+  position: absolute;
+  bottom: -30px;
+  right: 40px;
+  font-family: var(--about-font-headline);
+  font-size: clamp(7rem, 15vw, 15rem);
+  font-weight: 800;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(209, 26, 42, 0.09);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}

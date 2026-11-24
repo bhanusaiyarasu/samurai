@@ -147,7 +147,7 @@ export default function MoonCanvas() {
       moonRadius
     );
     overlayGrad.addColorStop(0, 'rgba(255, 255, 255, 0.05)'); // subtle highlight
-    overlayGrad.addColorStop(0.3, 'rgba(255, 120, 30, 0.1)'); // subtle orange atmospheric blend
+    overlayGrad.addColorStop(0.3, 'rgba(243, 22, 41, 0.12)'); // subtle red atmospheric blend
     overlayGrad.addColorStop(0.7, 'rgba(0, 0, 0, 0.5)'); // darken towards shadow
     overlayGrad.addColorStop(1, 'rgba(0, 0, 0, 0.95)');
     ctx.fillStyle = overlayGrad;
@@ -162,16 +162,16 @@ export default function MoonCanvas() {
     ctx.translate(cx, cy);
     ctx.rotate(lightAngle);
 
-    // Soft outer orange envelope
+    // Soft outer crimson envelope
     const outerHaloGrad = ctx.createLinearGradient(0, -moonRadius, 0, moonRadius);
-    outerHaloGrad.addColorStop(0, 'rgba(255, 77, 0, 0)');
-    outerHaloGrad.addColorStop(0.5, 'rgba(255, 95, 31, 0.5)');
-    outerHaloGrad.addColorStop(1, 'rgba(255, 77, 0, 0)');
+    outerHaloGrad.addColorStop(0, 'rgba(243, 22, 41, 0)');
+    outerHaloGrad.addColorStop(0.5, 'rgba(243, 22, 41, 0.55)');
+    outerHaloGrad.addColorStop(1, 'rgba(243, 22, 41, 0)');
 
     ctx.strokeStyle = outerHaloGrad;
     ctx.lineWidth = isMobile ? 2.5 : 4;
     ctx.shadowBlur = isMobile ? 6 : 10;
-    ctx.shadowColor = 'rgba(255, 77, 0, 0.65)';
+    ctx.shadowColor = 'rgba(243, 22, 41, 0.65)';
     ctx.beginPath();
     ctx.arc(0, 0, moonRadius + 0.5, -Math.PI / 2, Math.PI / 2);
     ctx.stroke();
@@ -215,12 +215,12 @@ export default function MoonCanvas() {
     ctx.rotate(hoverTime * 0.12 * (shard.speed > 0 ? 1 : -1));
 
     ctx.shadowBlur = 6;
-    ctx.shadowColor = 'hsla(18, 100%, 50%, 0.45)';
+    ctx.shadowColor = 'hsla(355, 92%, 52%, 0.45)';
 
     const shardGrad = ctx.createLinearGradient(0, -h, 0, h);
     shardGrad.addColorStop(0, '#ffffff');
-    shardGrad.addColorStop(0.35, 'hsl(18, 100%, 55%)');
-    shardGrad.addColorStop(1, 'hsl(18, 100%, 25%)');
+    shardGrad.addColorStop(0.35, 'hsl(355, 92%, 55%)');
+    shardGrad.addColorStop(1, 'hsl(355, 92%, 25%)');
 
     ctx.fillStyle = shardGrad;
     ctx.beginPath();

@@ -192,7 +192,7 @@
 .manifesto-header-divider {
   width: calc(100% + 4vw);
   height: 1px;
-  border-bottom: 1.5px dashed rgba(255, 92, 31, 0.25);
+  border-bottom: 1.5px dashed rgba(243, 22, 41, 0.28);
   margin-top: 1.5vh;
   margin-bottom: 5vh;
 }
@@ -228,7 +228,7 @@
   width: clamp(140px, 15vw, 190px);
   height: clamp(140px, 15vw, 190px);
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 92, 31, 0.08);
+  border: 1.5px solid rgba(243, 22, 41, 0.12);
   pointer-events: none;
   z-index: -1;
   user-select: none;
@@ -339,11 +339,11 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #ff5c1f;
+  background-color: #f31629;
   box-shadow: 
-    0 0 20px rgba(255, 92, 31, 1),
-    0 0 40px rgba(255, 92, 31, 0.8),
-    0 0 80px rgba(255, 92, 31, 0.4);
+    0 0 20px rgba(243, 22, 41, 1),
+    0 0 40px rgba(243, 22, 41, 0.8),
+    0 0 80px rgba(243, 22, 41, 0.4);
   opacity: 0;
   transform: scale(0);
   will-change: transform, opacity, height, border-radius;

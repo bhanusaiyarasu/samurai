@@ -6,13 +6,13 @@
   
   /* Borders & Dividers */
   --color-border-subtle: hsla(240, 5%, 15%, 0.3); /* Semi-transparent boundary */
-  --color-border-glow: hsla(18, 100%, 50%, 0.15); /* Accent border outline */
+  --color-border-glow: hsla(355, 92%, 52%, 0.15); /* Accent border outline */
 
-  /* Orange Energy Accent (High-Voltage Spectrum) */
-  --color-accent-primary: hsl(18, 100%, 50%);    /* #ff4d00 - Primary Orange Energy */
-  --color-accent-glow: hsla(18, 100%, 50%, 0.25); /* Glow shadow utility */
-  --color-accent-hover: hsl(18, 100%, 60%);     /* #ff6622 - Hover brighter orange */
-  --color-accent-muted: hsl(18, 70%, 15%);       /* Dark Amber (Background highlights) */
+  /* Crimson/Blood Red Energy Accent (replacing Orange) */
+  --color-accent-primary: hsl(355, 92%, 52%);    /* #f31629 - Primary Crimson Red Energy */
+  --color-accent-glow: hsla(355, 92%, 52%, 0.28); /* Glow shadow utility */
+  --color-accent-hover: hsl(355, 100%, 62%);     /* #ff3d50 - Hover brighter red */
+  --color-accent-muted: hsl(355, 80%, 15%);       /* #45080e - Deep Crimson (Background highlights) */
 
   /* Text Hierarchy */
   --color-text-primary: hsl(0, 0%, 95%);         /* #f2f2f2 - Pure luxury white */
@@ -261,7 +261,7 @@ a, button {
   will-change: transform;
 }
 
-/* Atmospheric orange ambient bloom behind the moon */
+/* Atmospheric red ambient bloom behind the moon */
 .moon-ambient-bloom {
   position: absolute;
   top: 14vh;
@@ -270,7 +270,7 @@ a, button {
   height: clamp(180px, 15vw, 280px);
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 110, 0, 0.35) 0%, rgba(255, 77, 0, 0.05) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(243, 22, 41, 0.35) 0%, rgba(243, 22, 41, 0.05) 50%, transparent 75%);
   filter: blur(40px);
   opacity: 0.35;
   z-index: 1; /* Render behind MoonCanvas */
@@ -416,8 +416,8 @@ a, button {
   height: 40vh;
   background: linear-gradient(
     to top,
-    rgba(255, 77, 0, 0.12) 0%,
-    rgba(255, 77, 0, 0.04) 40%,
+    rgba(243, 22, 41, 0.12) 0%,
+    rgba(243, 22, 41, 0.04) 40%,
     transparent 100%
   );
   z-index: 2;
@@ -444,11 +444,11 @@ a, button {
   will-change: transform;
 }
 
-/* Orange ambient glow cloud */
+/* Red ambient glow cloud */
 .atmos-fog-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255, 77, 0, 0.35) 0%, rgba(255, 77, 0, 0.05) 60%, transparent 100%);
+  background: radial-gradient(circle, rgba(243, 22, 41, 0.35) 0%, rgba(243, 22, 41, 0.05) 60%, transparent 100%);
   top: 10%;
   left: 15%;
   animation: fog-drift-1 45s ease-in-out infinite;
@@ -464,11 +464,11 @@ a, button {
   animation: fog-drift-2 45s ease-in-out infinite;
 }
 
-/* Muted amber cloud behind the head / portrait */
+/* Muted red cloud behind the head / portrait */
 .atmos-fog-3 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(255, 110, 0, 0.25) 0%, rgba(255, 110, 0, 0.03) 65%, transparent 100%);
+  background: radial-gradient(circle, rgba(243, 22, 41, 0.25) 0%, rgba(243, 22, 41, 0.03) 65%, transparent 100%);
   top: 30%;
   right: 15%;
   animation: fog-drift-3 45s ease-in-out infinite;
@@ -566,8 +566,8 @@ a, button {
   min-height: 700px;
   object-fit: contain;
   transform: translateX(2vw); /* Shift slightly to crop negative space on right */
-  /* Separation shadow and orange ambient light wrapping */
-  filter: brightness(0.95) contrast(1.12) drop-shadow(0 0 14px rgba(255, 95, 31, .08));
+  /* Separation shadow and red ambient light wrapping */
+  filter: brightness(0.95) contrast(1.12) drop-shadow(0 0 14px rgba(243, 22, 41, .12));
   mask-image: radial-gradient(ellipse 75% 85% at 50% 45%, black 45%, rgba(0, 0, 0, 0.25) 75%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 75% 85% at 50% 45%, black 45%, rgba(0, 0, 0, 0.25) 75%, transparent 100%);
   pointer-events: none;
@@ -580,12 +580,12 @@ a, button {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 95, 31, 0.35);
+  border: 1.5px solid rgba(243, 22, 41, 0.35);
   box-shadow: 
-    0 0 80px rgba(255, 77, 0, 0.28),
-    inset 0 0 50px rgba(255, 77, 0, 0.18),
-    0 0 150px rgba(255, 77, 0, 0.18);
-  background: radial-gradient(circle, rgba(255, 77, 0, 0.12) 0%, rgba(255, 77, 0, 0.03) 50%, transparent 75%);
+    0 0 80px rgba(243, 22, 41, 0.28),
+    inset 0 0 50px rgba(243, 22, 41, 0.18),
+    0 0 150px rgba(243, 22, 41, 0.18);
+  background: radial-gradient(circle, rgba(243, 22, 41, 0.12) 0%, rgba(243, 22, 41, 0.03) 50%, transparent 75%);
   filter: blur(6px);
   opacity: 0.22;
   top: 31%; /* Anchored relative to portrait head coordinate */
@@ -600,16 +600,16 @@ a, button {
 @keyframes halo-pulse {
   0%, 100% {
     box-shadow: 
-      0 0 70px rgba(255, 77, 0, 0.20),
-      inset 0 0 40px rgba(255, 77, 0, 0.12),
-      0 0 130px rgba(255, 77, 0, 0.12);
+      0 0 70px rgba(243, 22, 41, 0.20),
+      inset 0 0 40px rgba(243, 22, 41, 0.12),
+      0 0 130px rgba(243, 22, 41, 0.12);
     opacity: 0.85;
   }
   50% {
     box-shadow: 
-      0 0 95px rgba(255, 77, 0, 0.35),
-      inset 0 0 60px rgba(255, 77, 0, 0.25),
-      0 0 180px rgba(255, 77, 0, 0.25);
+      0 0 95px rgba(243, 22, 41, 0.35),
+      inset 0 0 60px rgba(243, 22, 41, 0.25),
+      0 0 180px rgba(243, 22, 41, 0.25);
     opacity: 1;
   }
 }
@@ -748,7 +748,7 @@ a, button {
 .cta-button:hover {
   border-color: var(--color-accent-primary);
   color: var(--color-accent-primary);
-  background: hsla(18, 100%, 50%, 0.08);
+  background: hsla(355, 92%, 52%, 0.08);
   box-shadow: 0 0 25px var(--color-accent-glow);
 }
 
@@ -773,7 +773,7 @@ a, button {
 }
 
 .cta-button-primary {
-  border-color: hsla(18, 100%, 50%, 0.35);
+  border-color: hsla(355, 92%, 52%, 0.35);
 }
 
 .cta-button-secondary {

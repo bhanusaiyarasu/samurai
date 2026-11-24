@@ -217,11 +217,11 @@
   width: 8px;
   height: 280px;
   border-radius: 2px;
-  background-color: var(--color-accent-primary, #ff4d00);
+  background-color: var(--color-accent-primary, #f31629);
   box-shadow: 
-    0 0 20px rgba(255, 77, 0, 1),
-    0 0 45px rgba(255, 77, 0, 0.8),
-    0 0 90px rgba(255, 77, 0, 0.4);
+    0 0 20px rgba(243, 22, 41, 1),
+    0 0 45px rgba(243, 22, 41, 0.8),
+    0 0 90px rgba(243, 22, 41, 0.4);
   will-change: transform, opacity, height;
   z-index: 10;
   pointer-events: none;

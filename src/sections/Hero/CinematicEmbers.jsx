@@ -76,10 +76,10 @@ export default function CinematicEmbers() {
 
       // Draw glowing ember
       const grad = ctx.createRadialGradient(ember.x, ember.y, 0, ember.x, ember.y, ember.size * 3);
-      grad.addColorStop(0, `hsla(18, 100%, 55%, ${opacity * 0.9})`);
-      grad.addColorStop(0.4, `hsla(18, 95%, 45%, ${opacity * 0.6})`);
-      grad.addColorStop(0.8, `hsla(15, 90%, 30%, ${opacity * 0.2})`);
-      grad.addColorStop(1, 'rgba(30, 15, 8, 0)');
+      grad.addColorStop(0, `hsla(355, 95%, 55%, ${opacity * 0.9})`);
+      grad.addColorStop(0.4, `hsla(355, 90%, 45%, ${opacity * 0.6})`);
+      grad.addColorStop(0.8, `hsla(350, 85%, 30%, ${opacity * 0.2})`);
+      grad.addColorStop(1, 'rgba(30, 10, 12, 0)');
 
       ctx.fillStyle = grad;
       ctx.beginPath();
@@ -87,7 +87,7 @@ export default function CinematicEmbers() {
       ctx.fill();
 
       // Inner bright core
-      ctx.fillStyle = `hsla(30, 100%, 60%, ${opacity})`;
+      ctx.fillStyle = `hsla(355, 100%, 65%, ${opacity})`;
       ctx.beginPath();
       ctx.arc(ember.x, ember.y, ember.size * 0.8, 0, Math.PI * 2);
       ctx.fill();

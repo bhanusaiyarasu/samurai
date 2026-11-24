@@ -121,9 +121,9 @@ export default function HeroParticles() {
       }
 
       // 4. Draw Particle
-      ctx.fillStyle = `rgba(255, 100, 30, ${p.alpha})`;
+      ctx.fillStyle = `rgba(243, 22, 41, ${p.alpha})`;
       ctx.shadowBlur = 4;
-      ctx.shadowColor = 'rgba(255, 77, 0, 0.4)';
+      ctx.shadowColor = 'rgba(243, 22, 41, 0.4)';
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       ctx.fill();

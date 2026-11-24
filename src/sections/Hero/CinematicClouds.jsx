@@ -18,7 +18,7 @@ export default function CinematicClouds() {
         speed: 0.02 + Math.random() * 0.03,
         scale: 2.5 + Math.random() * 1.5,
         opacity: 0.08 + Math.random() * 0.12,
-        hue: 18, // orange
+        hue: 355, // crimson red
         offset: Math.random() * Math.PI * 2,
       });
     }
@@ -30,7 +30,7 @@ export default function CinematicClouds() {
         speed: 0.008 + Math.random() * 0.02,
         scale: 1.8 + Math.random() * 1.2,
         opacity: 0.12 + Math.random() * 0.18,
-        hue: 18,
+        hue: 355,
         offset: Math.random() * Math.PI * 2,
       });
     }
@@ -42,7 +42,7 @@ export default function CinematicClouds() {
         speed: 0.005 + Math.random() * 0.015,
         scale: 1.2 + Math.random() * 0.8,
         opacity: 0.06 + Math.random() * 0.1,
-        hue: 15, // deeper orange
+        hue: 350, // deeper crimson
         offset: Math.random() * Math.PI * 2,
       });
     }

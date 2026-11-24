@@ -3,72 +3,257 @@
 .katana-experience-section {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #000000; /* Pure cinematic black */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #050505; /* Deep Obsidian Void matching reference screenshot */
+  overflow: visible;
   z-index: 10;
 }
 
-/* Central vertical glowing line transition target */
+/* Pinned 3D Stage Container */
+.katana-pin-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------------------------------------------------
+   LAYER 1: 3-Tier Scroll-Driven Background Typography (Behind Katana)
+   Uses Google Fonts "Cinzel" with massive size matching reference
+   ------------------------------------------------------------- */
+.katana-bg-typography-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 3vh 0;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.katana-text-tier {
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+.katana-text-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* Tier 1: Large Muted Silver Cinzel ("FLINCH × FEAR") */
+.tier-top .katana-text-track {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-size: clamp(6.2rem, 13.5vw, 14.5rem);
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  color: #a6a6ad;
+  opacity: 0.24;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.cinzel-word {
+  margin: 0 0.25em;
+}
+
+.cinzel-cross {
+  font-size: 0.65em;
+  opacity: 0.6;
+  margin: 0 0.15em;
+  vertical-align: middle;
+}
+
+/* Tier 2: Deep Crimson & Japanese Kanji ("GO ANYWAY 侍の道") */
+.tier-middle .katana-text-track {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-size: clamp(5.4rem, 11.5vw, 12.5rem);
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 0.07em;
+  color: rgb(75, 23, 23); /* Exact deep blood-red from reference */
+  opacity: 0.85;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.crimson-word {
+  margin: 0 0.25em;
+}
+
+.kanji-accent {
+  font-family: 'Yu Mincho', 'MS Mincho', 'Hiragino Mincho ProN', serif;
+  letter-spacing: 0.05em;
+  margin: 0 0.2em;
+  color: rgb(85, 28, 28);
+}
+
+/* Tier 3: Ghost Italic Mantra ("the hand will shake the heart will not") */
+.tier-bottom .katana-text-track {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+  font-size: clamp(2.4rem, 5vw, 5.2rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #71717a;
+  opacity: 0.18;
+  line-height: 1;
+}
+
+.mantra-phrase {
+  margin: 0 0.2em;
+}
+
+/* -------------------------------------------------------------
+   LAYER 2: Falling Raindrops & Floor Bounce Simulation Canvas
+   ------------------------------------------------------------- */
+.katana-rain-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* -------------------------------------------------------------
+   LAYER 3 (MIDDLE): 3D Interactive Katana Frame Canvas
+   ------------------------------------------------------------- */
+.katana-3d-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.katana-frame-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  pointer-events: none;
+  filter: none; /* Pristine native WebP resolution and natural contrast */
+  transform: translateZ(0);
+}
+
+/* -------------------------------------------------------------
+   LAYER 4 (FRONT): Center Poetic Statements (Masked Line-by-Line)
+   Aligned in FRONT of Katana (z-index: 10) with font-size 40px
+   ------------------------------------------------------------- */
+.katana-center-text-mask {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: clamp(54px, 5.5vw, 76px);
+  transform: translateY(-50%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+}
+
+.katana-center-line {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  will-change: transform, opacity;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.center-text-white {
+  color: #f5f2e9;
+}
+
+.center-text-red {
+  color: #d11e2b; /* Vibrant blood-red accent matching reference */
+}
+
+/* -------------------------------------------------------------
+   Transition Line & Edge Blending
+   ------------------------------------------------------------- */
 .katana-transition-line {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 8px;
-  height: 280px; /* Matching size from Manifesto ending */
+  height: 280px;
   border-radius: 2px;
-  background-color: #ff5c1f;
+  background-color: var(--color-accent-primary, #ff4d00);
   box-shadow: 
-    0 0 20px rgba(255, 92, 31, 1),
-    0 0 40px rgba(255, 92, 31, 0.8),
-    0 0 80px rgba(255, 92, 31, 0.4);
+    0 0 20px rgba(255, 77, 0, 1),
+    0 0 45px rgba(255, 77, 0, 0.8),
+    0 0 90px rgba(255, 77, 0, 0.4);
   will-change: transform, opacity, height;
-  z-index: 5;
+  z-index: 10;
+  pointer-events: none;
 }
 
-.katana-experience-content {
-  position: relative;
-  max-width: 1100px;
+.katana-vignette-linear-top {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding-left: 18vw; /* Left offset matches Manifesto section precisely */
-  text-align: left;
-  z-index: 2;
-  opacity: 0;
-  transform: translateY(20px);
-  will-change: opacity, transform;
+  height: 12vh;
+  background: linear-gradient(
+    to bottom,
+    #050505 0%,
+    rgba(5, 5, 5, 0.7) 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 4;
 }
 
-.katana-experience-label {
-  font-family: var(--font-body), sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.45em;
-  color: #ff5c1f;
-  line-height: 1;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  display: block;
-}
-
-.katana-experience-heading {
-  font-family: var(--font-display), sans-serif;
-  font-size: clamp(4rem, 7vw, 6.5rem);
-  font-weight: 500;
-  color: var(--color-text-primary);
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-
-.katana-experience-paragraph {
-  font-family: var(--font-body), sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--color-text-secondary);
-  opacity: 0.82;
-  max-width: 580px;
+.katana-vignette-linear-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12vh;
+  background: linear-gradient(
+    to top,
+    #050505 0%,
+    rgba(5, 5, 5, 0.7) 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 4;
 }

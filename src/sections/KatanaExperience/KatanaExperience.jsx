@@ -110,10 +110,6 @@ export default function KatanaExperience() {
       const drawX = (w - drawW) / 2;
       const drawY = (h - drawH) / 2;
 
-      // Solid obsidian backing directly behind the sword column (ensures 100% opacity against background text)
-      ctx.fillStyle = '#050505';
-      ctx.fillRect(drawX + drawW * 0.44, 0, drawW * 0.12, h);
-
       ctx.drawImage(img, drawX, drawY, drawW, drawH);
     }
 
